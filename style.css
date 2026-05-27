@@ -6,187 +6,151 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #FAF4F4; /* Елегантний пудровий фон */
-    color: #4A3B3B;
-    overflow-x: hidden;
+    /* Ніжний пастельний градієнт: голубий -> лавандовий -> рожевий */
+    background: linear-gradient(135deg, #E0F2FE 0%, #FAE8FF 50%, #FFE4E6 100%);
+    background-attachment: fixed;
+    color: #4A3E4E;
+    line-height: 1.6;
 }
 
 .container {
-    width: 85%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
-/* --- Преміальна Шапка (Flexbox) --- */
+/* --- Преміальна Шапка (FLEXBOX) --- */
 .main-header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 20px 7%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 5px 25px rgba(163, 114, 114, 0.08);
-    border-bottom: 1px solid #EFE0E0;
+    padding: 25px 20px 0 20px;
+    box-shadow: 0 8px 32px rgba(147, 51, 234, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.logo-container {
+/* Справжні Олімпійські Кільця на CSS */
+.olympic-rings {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 130px;
+    height: 65px;
+    margin-bottom: 10px;
 }
+
+.ring {
+    width: 35px;
+    height: 35px;
+    border: 3px solid #D4AF37; /* Благородне золото */
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Позиціонування 5 кілець */
+.ring.b1 { left: 5px; top: 5px; }
+.ring.b2 { left: 45px; top: 5px; }
+.ring.b3 { left: 85px; top: 5px; }
+.ring.b4 { left: 25px; top: 25px; }
+.ring.b5 { left: 65px; top: 25px; }
 
 .logo-container h1 {
-    font-size: 1.4rem;
-    color: #8C5E5E;
+    font-size: 1.8rem;
+    color: #A37081; /* Пастельний матовий рожевий */
     letter-spacing: 2px;
     font-weight: 600;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-.olympic-hint {
-    font-size: 0.8rem;
-    color: #D4AF37; /* Золото */
-    letter-spacing: 6px;
-    margin-bottom: 2px;
+/* Навігаційна панель */
+.main-nav {
+    width: 100vw;
+    background: rgba(192, 192, 253, 0.6); /* Лавандова пастельна плашка */
+    display: flex;
+    justify-content: center;
 }
 
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 5px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
 }
 
 .main-nav a {
     display: block;
-    padding: 10px 22px;
+    padding: 15px 25px;
     text-decoration: none;
-    color: #6E5D5D;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border-radius: 25px;
-    transition: all 0.4s ease;
-}
-
-.main-nav a:hover, .main-nav a.active {
-    color: #FFFFFF;
-    background-color: #8C5E5E;
-    box-shadow: 0 4px 15px rgba(140, 94, 94, 0.25);
-}
-
-/* --- Hero Section (Головний банер) --- */
-.hero-banner {
-    background: linear-gradient(135deg, #FDF6F6 0%, #F5E6E6 100%);
-    padding: 120px 20px;
-    text-align: center;
-    position: relative;
-    border-bottom: 1px solid #EFE0E0;
-}
-
-.hero-content h2 {
-    font-size: 2.8rem;
-    color: #5C3A3A;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.hero-content p {
-    font-size: 1.15rem;
-    max-width: 700px;
-    margin: 0 auto 35px auto;
-    color: #7A6565;
-    line-height: 1.8;
-}
-
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #D4AF37 0%, #BDA032 100%);
-    color: #FFFFFF;
-    padding: 16px 38px;
-    text-decoration: none;
-    border-radius: 30px;
+    color: #5E5266;
     font-weight: 600;
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+.main-nav a:hover, .main-nav a.active {
+    background-color: #FFFFFF;
+    color: #A37081;
 }
 
-/* --- Секція заголовків для внутрішніх сторінок --- */
-.page-title-section {
-    background-color: #FFFFFF;
+/* --- Головна Картка з інформацією (Твоє фото та інфо) --- */
+.main-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(163, 112, 129, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     text-align: center;
-    padding: 50px 20px;
-    border-bottom: 1px solid #EFE0E0;
 }
 
-.page-title-section h2 {
-    font-size: 2.4rem;
-    color: #5C3A3A;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 15px;
+/* Потужна штука для фото: більше нічого не обрізається! */
+.image-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(94, 82, 102, 0.15);
+    background-color: #ffffff;
+    padding: 10px; /* Ефект красивої білої рамки */
 }
 
-.page-title-section h2::after {
-    content: '◯ ◯ ◯';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.7rem;
-    color: #D4AF37;
-    letter-spacing: 3px;
+.responsive-img {
+    width: 100%;
+    height: auto; /* Фото масштабується природно */
+    display: block;
+    border-radius: 12px;
 }
 
-/* --- Розмітка Контенту (CSS Grid) --- */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 50px;
-    align-items: center;
+.img-caption {
+    font-size: 1.1rem;
+    color: #A37081;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 500;
 }
 
-.card {
-    background-color: #FFFFFF;
-    padding: 45px;
-    border-radius: 24px;
-    box-shadow: 0 10px 35px rgba(140, 94, 94, 0.04);
-    border: 1px solid rgba(239, 224, 224, 0.5);
-}
-
-.card h3 {
-    color: #5C3A3A;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.card p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #6E5D5D;
-    margin-bottom: 20px;
-}
-
-/* --- Списки (Простий та Складний) --- */
-.simple-list {
+/* --- Списки --- */
+.simple-list, .complex-nested-list {
+    text-align: left;
+    max-width: 700px;
+    margin: 30px auto;
     list-style: none;
-    margin: 20px 0;
 }
 
 .simple-list li {
-    margin-bottom: 12px;
-    font-size: 1.05rem;
-    position: relative;
     padding-left: 30px;
-    color: #6E5D5D;
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
 .simple-list li::before {
@@ -196,98 +160,79 @@ body {
     color: #D4AF37;
 }
 
-/* Складний вкладений список */
-.complex-nested-list {
-    list-style: none;
-    padding-left: 0;
-}
-
+/* Складний список для сторінки Досягнень */
 .complex-nested-list > li {
-    background-color: #FFFDFD;
-    border-left: 4px solid #D4AF37;
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 0 16px 16px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid #D4AF37;
 }
 
-.complex-nested-list .category-title {
+.category-title {
     font-weight: 600;
-    color: #5C3A3A;
     font-size: 1.2rem;
-    display: block;
+    color: #A37081;
     margin-bottom: 10px;
+    display: block;
 }
 
 .complex-nested-list ul {
     list-style: none;
     padding-left: 20px;
-    margin-top: 5px;
 }
 
 .complex-nested-list ul li {
+    margin-bottom: 8px;
     position: relative;
     padding-left: 20px;
-    margin-bottom: 8px;
-    color: #7A6565;
 }
 
 .complex-nested-list ul li::before {
     content: '•';
+    color: #9333EA;
     position: absolute;
     left: 0;
-    color: #8C5E5E;
 }
 
-/* --- Дизайнерська Комплексна Таблиця --- */
+/* --- Комплексна Таблиця (Розклад) --- */
 .table-container {
     overflow-x: auto;
-    background-color: #FFFFFF;
+    margin: 30px 0;
     border-radius: 20px;
-    box-shadow: 0 10px 35px rgba(140, 94, 94, 0.04);
-    border: 1px solid #EFE0E0;
-    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
-    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .schedule-table th {
-    background-color: #8C5E5E;
-    color: #FFFFFF;
-    padding: 20px;
+    background-color: #A37081;
+    color: white;
+    padding: 18px;
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 .schedule-table td {
-    padding: 20px;
-    border-bottom: 1px solid #FDF6F6;
-    color: #6E5D5D;
-}
-
-.schedule-table tr:last-child td {
-    border-bottom: none;
-}
-
-.schedule-table tr:nth-child(even) {
-    background-color: #FCF8F8;
+    padding: 18px;
+    border-bottom: 1px solid #FAF4F4;
 }
 
 .schedule-table tr:hover {
-    background-color: #F5E6E6;
-    transition: background-color 0.3s ease;
+    background-color: #FDF4F5;
 }
 
-/* --- Преміум Форма (Contact Form) --- */
+/* --- Форма (Запис) --- */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
 }
 
 .form-group {
@@ -298,145 +243,77 @@ body {
 
 .form-group label {
     font-weight: 600;
-    font-size: 0.9rem;
-    color: #5C3A3A;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: #A37081;
 }
 
-.form-group input, .form-group textarea, .form-group select {
-    padding: 16px;
-    border: 1px solid #EFE0E0;
+.form-group input, .form-group select, .form-group textarea {
+    padding: 14px;
+    border: 1px solid #E2D9E6;
     border-radius: 12px;
-    background-color: #FCF8F8;
+    background: #FFFFFF;
     font-family: inherit;
-    font-size: 1rem;
-    color: #4A3B3B;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-    outline: none;
-    border-color: #D4AF37;
-    background-color: #FFFFFF;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
 }
 
 .form-submit {
-    background: linear-gradient(135deg, #8C5E5E 0%, #734A4A 100%);
-    color: #FFFFFF;
+    background: linear-gradient(135deg, #A37081 0%, #8A596A 100%);
+    color: white;
     border: none;
     padding: 16px;
     border-radius: 12px;
-    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(140, 94, 94, 0.2);
+    box-shadow: 0 5px 15px rgba(163, 112, 129, 0.3);
     transition: all 0.3s ease;
 }
 
 .form-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(140, 94, 94, 0.35);
 }
 
-/* --- Естетична Галерея та Медіа (CSS Grid) --- */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.gallery-item {
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(163, 114, 114, 0.05);
-    border: 1px solid #EFE0E0;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-.responsive-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
+/* --- Медіа / Відео --- */
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(140, 94, 94, 0.15);
-    border: 4px solid #FFFFFF;
-    margin-top: 30px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.video-container iframe, .video-container video {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
-.img-caption {
-    font-size: 0.9rem;
-    color: #8A7575;
-    padding: 15px;
-    text-align: center;
-    font-style: italic;
-    background-color: #FFFFFF;
-}
-
-/* --- Футер сайту --- */
+/* --- Преміум Футер --- */
 .main-footer {
-    background-color: #8C5E5E;
-    color: #FDF6F6;
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 80px;
-    border-top: 3px solid #D4AF37;
-}
-
-.main-footer p {
-    margin-bottom: 10px;
+    padding: 30px;
+    margin-top: 60px;
     font-size: 0.95rem;
-    opacity: 0.9;
+    color: #5E5266;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .external-link {
-    color: #D4AF37;
+    color: #A37081;
     text-decoration: none;
     font-weight: 600;
-    transition: opacity 0.3s;
 }
 
-.external-link:hover {
-    opacity: 0.8;
-}
-
-/* --- Адаптивність для смартфонів --- */
-@media (max-width: 900px) {
-    .main-header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
+/* Адаптивність під мобільні */
+@media (max-width: 768px) {
     .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-content h2 {
-        font-size: 2rem;
+    .main-nav a {
+        padding: 10px;
     }
 }
