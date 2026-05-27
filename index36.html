@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запис на заняття | ДЮСШ Вишгород</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <span class="olympic-hint">◯ ◯ ◯ ◯ ◯</span>
+            <h1>ДЮСШ Вишгород</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про школу</a></li>
+                <li><a href="schedule.html">Розклад</a></li>
+                <li><a href="achievements.html">Досягнення</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html" class="active">Запис</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-title-section">
+        <h2>Приєднуйтесь до нас</h2>
+    </section>
+
+    <main class="container">
+        <div class="content-grid">
+            <div class="card">
+                <h3>Заповніть анкету майбутньої гімнастки</h3>
+                <p>Ми зв'яжемося з вами найближчим часом, щоб запросити на перше пробне заняття.</p>
+                
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="parent-name">Ім'я батьків або опікуна:</label>
+                        <input type="text" id="parent-name" name="parent-name" required placeholder="Олена Іванова">
+                    </div>
+                    <div class="form-group">
+                        <label for="child-age">Вік дитини (років):</label>
+                        <select id="child-age" name="child-age" required>
+                            <option value="">Оберіть вік...</option>
+                            <option value="4-5">4 - 5 років</option>
+                            <option value="6-7">6 - 7 років</option>
+                            <option value="8-10">8 - 10 років</option>
+                            <option value="11+">11 років і старше</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Номер телефону для зв'язку:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+380">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ваші побажання або спортивний досвід дитини:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Чи займалася дитина танцями чи спортом раніше..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Надіслати заявку</button>
+                </form>
+            </div>
+            
+            <div class="card" style="background-color: #FDF6F6;">
+                <h3>Де ми знаходимось?</h3>
+                <p><strong>Адреса:</strong> м. Вишгород, Спортивний комплекс ДЮСШ</p>
+                <p><strong>Електронна пошта:</strong> info@vyshgorod-gymnastics.ua</p>
+                <p>Чекаємо на вас у залі!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 ДЮСШ Вишгород. Художня гімнастика.</p>
+    </footer>
+</body>
+</html>
