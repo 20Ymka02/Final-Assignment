@@ -111,16 +111,15 @@ body {
     text-align: center;
 }
 
-/* Потужна штука для фото: більше нічого не обрізається! */
-.image-container {
+
+.image-container img {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 20px;
+    height: auto; 
+    display: block;
     overflow: hidden;
     box-shadow: 0 15px 45px rgba(94, 82, 102, 0.15);
     background-color: #ffffff;
-    padding: 10px; /* Ефект красивої білої рамки */
+    padding: 10px; 
 }
 
 .responsive-img {
